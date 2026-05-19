@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>English Genres — EduLearn</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="dot"></span>
+      EduLearn
+    </div>
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <div class="toggle-track">
+        <div class="toggle-thumb"></div>
+      </div>
+      <span class="toggle-label">Blue</span>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">English Language · Genre Studies</div>
+  <h1>Understanding<br/><em>Text Structure</em></h1>
+  <p>Explore the world of English text genres — learn their definitions, structures, and dive into engaging examples.</p>
+  <div class="hero-pills">
+    <button class="hero-pill">Narrative Text</button>
+    <button class="hero-pill">Biography Text</button>
+    <button class="hero-pill">Recount Text</button>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+
+  <!-- TABS NAV -->
+  <div class="tabs-wrapper">
+    <div class="tabs-nav">
+      <button class="tab-btn active" id="tab-narrative" onclick="switchTab('narrative', null)">
+        <span class="tab-icon">📖</span> Narrative Text
+      </button>
+      <button class="tab-btn" id="tab-biography" onclick="switchTab('biography', null)">
+        <span class="tab-icon">🏅</span> Biography Text
+      </button>
+      <button class="tab-btn" id="tab-recount" onclick="switchTab('recount', null)">
+        <span class="tab-icon">✏️</span> Recount Text
+      </button>
+    </div>
+  </div>
+
+  <!-- ══════════ NARRATIVE PANEL ══════════ -->
+  <div class="tab-panel active" id="panel-narrative">
+    <div class="section-header">
+      <div class="section-icon">📖</div>
+      <div class="section-title">
+        <h2>Narrative Text</h2>
+        <p>Stories that entertain, inspire, and convey moral values</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-label">📌 Definition</div>
+        <h3>What is Narrative Text?</h3>
+        <p>Narrative text is a type of text that tells a story involving characters, setting, and a sequence of events. Its primary purpose is to <strong>entertain</strong> readers, though it often conveys deeper messages or moral values through the plot.</p>
+      </div>
+    </div>
+
+    <div class="types-card">
+      <div class="types-header">
+        <span>📚 Included Types</span>
+        <h3>Examples of Narrative Text</h3>
+        <p>Common story-based texts that entertain readers and deliver moral lessons.</p>
+      </div>
+
+      <div class="types-grid">
+        
+        <div class="type-item">
+          <div>
+            <h4>Legends</h4>
+            <p>Malin Kundang, Sangkuriang, Lake Toba, and Roro Jonggrang.</p>
+          </div>
+        </div>
+
+        <div class="type-item">
+          <div>
+            <h4>Fairytales</h4>
+            <p>Cinderella, Snow White, and Beauty and the Beast.</p>
+          </div>
+        </div>
+
+        <div class="type-item">
+          <div>
+            <h4>Fables</h4>
+            <p>The Lion and the Mouse or The Mouse Deer and the Crocodile.</p>
+          </div>
+        </div>
+
+        <div class="type-item">
+          <div>
+            <h4>Popular Fiction</h4>
+            <p>Harry Potter, The Lion King, and other fictional stories.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="structure-card">
+      <h3> Generic Structure</h3>
+      <ul class="structure-list">
+        <li class="structure-item">
+          <div class="structure-num">01</div>
+          <div class="structure-item-body">
+            <strong>Orientation</strong>
+            <span>Introduces characters, setting (time and place), and the initial situation. It sets the scene for the reader.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">02</div>
+          <div class="structure-item-body">
+            <strong>Complication</strong>
+            <span>The main conflict or problem arises. This is the rising tension that drives the story forward and creates interest.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">03</div>
+          <div class="structure-item-body">
+            <strong>Resolution</strong>
+            <span>The conflict is resolved — either happily or unhappily. The characters find a way to deal with the problem.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">04</div>
+          <div class="structure-item-body">
+            <strong>Re-orientation <em>(Optional)</em></strong>
+            <span>A closing section that reflects on the events, often delivering a moral or final insight about the story.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="example-box">
+      <div class="example-tag">📖 Example Story</div>
+      <h4>The Lion and The Mouse</h4>
+
+      <div class="example-section-label">Orientation</div>
+      <p class="example-para">Once upon a time, a mighty Lion lay sleeping in the African savanna under the warm afternoon sun. His golden mane spread across the grass as he rested peacefully. Nearby, a tiny Mouse scurried through the meadow, looking for seeds to eat.</p>
+
+      <div class="example-section-label">Complication</div>
+      <p class="example-para">Without paying attention, the little Mouse accidentally ran across the Lion's nose. The Lion woke up with a roar, swiped his enormous paw, and caught the tiny creature. "How dare you disturb my sleep!" growled the Lion, lifting the Mouse close to his great jaws. "I shall eat you for this!"</p>
+      <p class="example-para">The Mouse trembled with fear but managed to squeak boldly, "Please, great King, spare my life! I am too tiny to fill your belly. Let me go, and someday — I promise — I will repay your kindness." The Lion burst into laughter. A mouse repaying a lion? Amused by the little creature's boldness, he opened his paw and let the Mouse go free.</p>
+
+      <div class="example-section-label">Resolution</div>
+      <p class="example-para">Some weeks later, the Lion was prowling through the jungle when he stepped into a hunter's rope trap. The more he struggled, the tighter the ropes bound him, and his mighty roars echoed across the land. The little Mouse heard the familiar voice and rushed to the scene. Without hesitation, the Mouse began gnawing at the thick ropes with her sharp teeth. One by one, the strands snapped — and the Lion was free.</p>
+
+      <div class="example-section-label">Re-orientation</div>
+      <p class="example-para">"You laughed when I said I would repay you," the Mouse said with a smile. "Now you see: no act of kindness is ever too small, and even the mightiest may need the help of the tiniest." From that day on, the Lion and the Mouse became the best of friends — a reminder that <em>kindness is never wasted, and true friendship knows no size</em>.</p>
+    </div>
+  </div>
+
+  <!-- ══════════ BIOGRAPHY PANEL ══════════ -->
+  <div class="tab-panel" id="panel-biography">
+    <div class="section-header">
+      <div class="section-icon">🏅</div>
+      <div class="section-title">
+        <h2>Biography Text</h2>
+        <p>The story of a real person's life, achievements, and legacy</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-label">📌 Definition</div>
+        <h3>What is Biography Text?</h3>
+        <p>A biography is a detailed written account of another person's life. It documents their life journey — from birth to significant life events — written by someone other than the subject, aiming to inform and inspire readers.</p>
+      </div>
+    </div>
+
+    <div class="types-card">
+  <div class="types-header">
+    <span>🏅 Included Types</span>
+    <h3>Examples of Biography Text</h3>
+    <p>Biographies of important figures from Indonesia and around the world.</p>
+  </div>
+
+  <div class="types-grid">
+
+    <div class="type-item">
+      <div>
+        <h4>National Figures</h4>
+        <p>Ir. Soekarno, Ki Hajar Dewantara, and B.J. Habibie.</p>
+      </div>
+    </div>
+
+    <div class="type-item">
+      <div>
+        <h4>International Figures</h4>
+        <p>Albert Einstein, Nelson Mandela, and Marie Curie.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <div class="structure-card">
+      <h3> Generic Structure</h3>
+      <ul class="structure-list">
+        <li class="structure-item">
+          <div class="structure-num">01</div>
+          <div class="structure-item-body">
+            <strong>Orientation</strong>
+            <span>Introduces the subject — who they are, when and where they were born, and background information about their early life.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">02</div>
+          <div class="structure-item-body">
+            <strong>Events / Record of Events</strong>
+            <span>A chronological account of the significant events, achievements, challenges, and milestones in the subject's life.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">03</div>
+          <div class="structure-item-body">
+            <strong>Re-orientation</strong>
+            <span>A concluding section that reflects on the subject's legacy, lasting impact, or a summary of their contributions to the world.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="example-box">
+      <div class="example-tag">🏅 Example Biography</div>
+      <h4>Biography of B.J. Habibie</h4>
+
+      <div class="example-section-label">Orientation</div>
+      <p class="example-para">Bacharuddin Jusuf Habibie was born on June 25, 1936, in Parepare, South Sulawesi, Indonesia. Known as one of the most brilliant minds Indonesia has ever produced, he displayed exceptional intellectual talent from a very young age. Raised in a family that valued education deeply, young Habibie showed a remarkable passion for mathematics and engineering that would define his extraordinary life.</p>
+
+      <div class="example-section-label">Events</div>
+      <p class="example-para">After completing his early education in Indonesia, Habibie pursued aeronautical engineering at RWTH Aachen University in Germany in 1955. He graduated with outstanding grades and went on to earn his doctorate in aerospace engineering. His brilliance did not go unnoticed — he joined Messerschmitt-Bölkow-Blohm (MBB), a leading German aircraft company, where he rose to become Vice President and pioneered the revolutionary "Habibie Factor," a mathematical formula for calculating the stress and fractures in aircraft structures.</p>
+      <p class="example-para">In 1974, at the request of President Suharto, Habibie returned to Indonesia to lead the country's technological development. He founded PT Industri Pesawat Terbang Nusantara (IPTN) and produced the N250 Gatotkaca — the first passenger aircraft designed and built in Southeast Asia. He served as Minister of Research and Technology for over two decades and was elected Vice President in 1998. When Suharto resigned in May 1998 amid political turmoil, Habibie was sworn in as the 3rd President of Indonesia — a role he held until 1999.</p>
+      <p class="example-para">As President, Habibie introduced sweeping democratic reforms: granting freedom of the press, releasing political prisoners, and allowing the first free elections in decades. He also made the difficult decision to allow a referendum in East Timor, which led to its independence — a move that was widely debated but reflected his commitment to democratic principles.</p>
+
+      <div class="example-section-label">Re-orientation</div>
+      <p class="example-para">B.J. Habibie passed away on September 11, 2019, but his legacy lives on as a symbol of intelligence, integrity, and dedication to Indonesia. He proved that an Indonesian could stand at the forefront of global science and technology. His life story continues to inspire millions of young Indonesians to dream big, study hard, and serve their nation with passion and excellence.</p>
+    </div>
+  </div>
+
+  <!-- ══════════ RECOUNT PANEL ══════════ -->
+  <div class="tab-panel" id="panel-recount">
+    <div class="section-header">
+      <div class="section-icon">✏️</div>
+      <div class="section-title">
+        <h2>Recount Text</h2>
+        <p>Retelling past events and personal experiences in sequence</p>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-label">📌 Definition</div>
+        <h3>What is Recount Text?</h3>
+        <p>A recount text is a piece of writing that retells past events or experiences in chronological order. Its main purpose is to <strong>inform or entertain</strong> the reader by sharing what happened during a specific time.</p>
+      </div>
+    </div>
+
+    <div class="types-card">
+      <div class="types-header">
+        <span>✏️ Included Types</span>
+        <h3>Examples of Recount Text</h3>
+        <p>Texts that retell personal experiences or historical events.</p>
+      </div>
+
+      <div class="types-grid">
+
+        <div class="type-item">
+          <div>
+            <h4>Personal Experiences</h4>
+            <p>A holiday to the beach, first day at school, or winning a competition.</p>
+          </div>
+        </div>
+
+        <div class="type-item">
+          <div>
+            <h4>Travelogue</h4>
+            <p>Camping with family or mountain hiking experiences.</p>
+          </div>
+        </div>
+
+        <div class="type-item">
+          <div>
+            <h4>Historical Recount</h4>
+            <p>The Indonesian Independence Proclamation or the sinking of the Titanic.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="structure-card">
+      <h3> Generic Structure</h3>
+      <ul class="structure-list">
+        <li class="structure-item">
+          <div class="structure-num">01</div>
+          <div class="structure-item-body">
+            <strong>Orientation</strong>
+            <span>Sets the scene by answering who, what, where, and when — giving readers background context about the event.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">02</div>
+          <div class="structure-item-body">
+            <strong>Events</strong>
+            <span>A series of events told in chronological order. Each event is described in sequence, showing what happened step by step.</span>
+          </div>
+        </li>
+        <li class="structure-item">
+          <div class="structure-num">03</div>
+          <div class="structure-item-body">
+            <strong>Re-orientation</strong>
+            <span>A closing comment, personal reflection, or summary of the writer's thoughts and feelings about the experience.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="example-box">
+      <div class="example-tag">✏️ Example Recount</div>
+      <h4>My Holiday to the Beach</h4>
+
+      <div class="example-section-label">Orientation</div>
+      <p class="example-para">Last month, during the school holiday, my family and I decided to spend a long weekend at Parangtritis Beach in Yogyakarta. We had been planning the trip for weeks, and we were all so excited. We woke up very early on Saturday morning, packed our bags, loaded the car, and hit the road before sunrise.</p>
+
+      <div class="example-section-label">Events</div>
+      <p class="example-para">We arrived at the beach around 8 o'clock in the morning, just as the sun was rising over the horizon. The sight was breathtaking — the sky was painted in shades of orange and pink, and the waves crashed dramatically against the dark volcanic sand. The cool morning breeze was refreshing after the long drive.</p>
+      <p class="example-para">First, my younger brother and I ran straight to the edge of the water, laughing as the waves chased our feet. Then, my father rented two horses so we could ride along the shoreline — it was my first time riding a horse, and it felt thrilling and a little wobbly! My mother, who preferred to stay on solid ground, set up a mat nearby and prepared our breakfast picnic.</p>
+      <p class="example-para">After breakfast, we explored the beach further and discovered a traditional craft market where local vendors sold beautiful seashell souvenirs, batik shirts, and fresh coconut drinks. I bought a small seashell wind chime as a memento. In the afternoon, we watched a group of local fishermen haul in their nets — it was fascinating to see how hard they worked under the hot sun.</p>
+      <p class="example-para">As evening approached, we gathered to watch the sunset together. The golden light reflecting on the waves was absolutely stunning. We took dozens of photos before reluctantly packing up and heading back to our hotel, tired but happy.</p>
+
+      <div class="example-section-label">Re-orientation</div>
+      <p class="example-para">That weekend at Parangtritis Beach was truly one of the most memorable family holidays we have ever had. The natural beauty of the beach, the joy of being together, and all the new experiences we shared made it a trip I will never forget. I hope we can go back again someday — and next time, I'll make sure to wake up early enough to see the sunrise from the very beginning.</p>
+    </div>
+  </div>
+
+</main>
+
+<section class="quiz-section" id="quiz-area">
+    <div class="quiz-overlay">
+      <div class="quiz-card">
+        
+        <div id="quiz-start-state">
+          <h3>Ready for a Challenge?</h3>
+          <p>Test your understanding of English text material. Press the Start button to select a category!</p>
+          <button class="quiz-btn-primary" onclick="showQuizCategories()">Start</button>
+        </div>
+
+        <div id="quiz-category-state" style="display: none;">
+          <h3>Pilih Topik Soal:</h3>
+          <div class="quiz-cat-buttons">
+            <button class="quiz-btn-outline" onclick="startQuizEngine('narrative')">Narrative Text</button>
+            <button class="quiz-btn-outline" onclick="startQuizEngine('biography')">Biography Text</button>
+            <button class="quiz-btn-outline" onclick="startQuizEngine('recount')">Recount Text</button>
+          </div>
+        </div>
+
+        <div id="quiz-question-state" style="display: none;">
+          <div class="quiz-header-info">
+            <span id="quiz-topic-badge" class="quiz-badge">Topic</span>
+            <span id="quiz-progress" class="quiz-progress-text">1/5</span>
+          </div>
+          <h4 id="quiz-question-text">Question goes here?</h4>
+          <div id="quiz-options-area" class="quiz-options">
+            </div>
+          <button id="quiz-next-btn" class="quiz-btn-primary" style="display: none; margin-top: 15px; width: 100%;" onclick="loadNextQuestion()">Next Question</button>
+        </div>
+
+        <div id="quiz-result-state" style="display: none;">
+          <h3>Quiz Selesai!</h3>
+
+          <div class="quiz-score-circle">
+            <span id="quiz-final-score">100</span>
+          </div>
+
+          <div class="quiz-stats">
+            <div class="quiz-stat-item correct">
+              ✅ Benar: <span id="quiz-correct-count">5</span>
+            </div>
+
+            <div class="quiz-stat-item wrong">
+              ❌ Salah: <span id="quiz-wrong-count">0</span>
+            </div>
+          </div>
+
+          <!-- REVIEW JAWABAN -->
+          <div id="quiz-review-area" class="quiz-review-area"></div>
+
+          <button class="quiz-btn-primary" onclick="resetQuizEngine()">
+            Try Again
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<!-- FOOTER -->
+<footer>
+  <p>TIM WEBSITE : HASAHIA <strong>Structure Text</strong> · © 2026</p>
+</footer>
+
+<script>
+function toggleTheme() {
+
+  document.body.classList.toggle('purple-theme');
+
+  const label = document.querySelector('.toggle-label');
+
+  if(document.body.classList.contains('purple-theme')){
+    label.innerText = 'Purple';
+
+    // simpan tema
+    localStorage.setItem('theme', 'purple');
+
+  } else {
+    label.innerText = 'Blue';
+
+    // simpan tema
+    localStorage.setItem('theme', 'blue');
+  }
+}
+
+/* LOAD SAVED THEME */
+window.addEventListener('DOMContentLoaded', () => {
+
+  const savedTheme = localStorage.getItem('theme');
+
+  if(savedTheme === 'purple'){
+
+    document.body.classList.add('purple-theme');
+
+    document.querySelector('.toggle-label').innerText = 'Purple';
+  }
+});
+</script>
+
+<script>
+  function switchTab(id, heroPill) {
+    // panels
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+
+    // tab buttons
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+
+    // hero pills
+    document.querySelectorAll('.hero-pill').forEach(p => p.classList.remove('active'));
+    if (heroPill) {
+      heroPill.classList.add('active');
+    } else {
+      // sync hero pill by index
+      const ids = ['narrative', 'biography', 'recount'];
+      const idx = ids.indexOf(id);
+      document.querySelectorAll('.hero-pill')[idx]?.classList.add('active');
+    }
+
+    // scroll to main
+    document.querySelector('main').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+<script>
+const hero = document.querySelector('.hero');
+
+window.addEventListener('scroll', function () {
+  const scrollY = window.scrollY;
+
+  hero.style.backgroundPosition =
+    `center ${scrollY * 0.5}px`;
+});
+</script>
+<script>
+  // --- QUIZ LOGIC ---
+  const quizDB = {
+    narrative: [
+      { q: "What is the main purpose of Narrative Text?", opts: ["To report an event", "To entertain the readers", "To explain a process", "To describe a person"], ans: 1 },
+      { q: "Which part introduces the characters and setting?", opts: ["Orientation", "Resolution", "Complication", "Events"], ans: 0 },
+      { q: "The problem or conflict in the story is called...", opts: ["Re-orientation", "Resolution", "Complication", "Orientation"], ans: 2 },
+      { q: "Which of the following is an example of Narrative Text?", opts: ["Biography of B.J. Habibie", "How to make a cake", "My Holiday to the Beach", "The Lion and The Mouse"], ans: 3 },
+      { q: "What is the function of the Resolution?", opts: ["To create a new problem", "To explain how the problem is solved", "To give a moral value", "To describe the characters"], ans: 1 }
+    ],
+    biography: [
+      { q: "Biography Text is written based on...", opts: ["Imagination", "Fairy tales", "Factual information", "Legends"], ans: 2 },
+      { q: "What is usually found in the 'Orientation' of a Biography?", opts: ["Name, birthplace, and background", "A chronological list of events", "A moral lesson", "The conclusion of their life"], ans: 0 },
+      { q: "Where did B.J. Habibie study engineering?", opts: ["Indonesia", "Germany", "United States", "Japan"], ans: 1 },
+      { q: "The generic structure of Biography text is...", opts: ["Orientation - Events - Re-orientation", "Orientation - Complication - Resolution", "Goal - Materials - Steps", "Identification - Description"], ans: 0 },
+      { q: "In what year did B.J. Habibie become the President of Indonesia?", opts: ["1936", "1955", "1998", "1999"], ans: 2 }
+    ],
+    recount: [
+      { q: "Recount Text retells past events in...", opts: ["Alphabetical order", "Random order", "Chronological order", "Reverse order"], ans: 2 },
+      { q: "What is the purpose of Recount Text?", opts: ["To amuse with magic", "To inform or entertain about past experiences", "To argue a point", "To describe an object"], ans: 1 },
+      { q: "In the example 'My Holiday to the Beach', what time did they arrive?", opts: ["7 a.m.", "8 a.m.", "9 a.m.", "10 a.m."], ans: 2 },
+      { q: "Which part of Recount Text provides personal impression?", opts: ["Orientation", "Events", "Re-orientation", "Complication"], ans: 2 },
+      { q: "Which language feature is primarily used in Recount Text?", opts: ["Simple Present Tense", "Simple Future Tense", "Simple Past Tense", "Present Continuous Tense"], ans: 2 }
+    ]
+  };
+
+  let currentTopic = '';
+  let qIndex = 0;
+  let scoreCorrect = 0;
+  let userAnswers = [];
+
+  const stateStart = document.getElementById('quiz-start-state');
+  const stateCat = document.getElementById('quiz-category-state');
+  const stateQ = document.getElementById('quiz-question-state');
+  const stateResult = document.getElementById('quiz-result-state');
+
+  function hideAllQuizStates() {
+    stateStart.style.display = 'none';
+    stateCat.style.display = 'none';
+    stateQ.style.display = 'none';
+    stateResult.style.display = 'none';
+  }
+
+  function showQuizCategories() {
+    hideAllQuizStates();
+    stateCat.style.display = 'block';
+  }
+
+  function startQuizEngine(topic) {
+    currentTopic = topic;
+    qIndex = 0;
+    scoreCorrect = 0;
+    userAnswers = [];
+    document.getElementById('quiz-topic-badge').innerText = topic.toUpperCase();
+    hideAllQuizStates();
+    stateQ.style.display = 'block';
+    renderQuestion();
+  }
+
+  function renderQuestion() {
+    const data = quizDB[currentTopic][qIndex];
+    document.getElementById('quiz-progress').innerText = `${qIndex + 1} / 5`;
+    document.getElementById('quiz-question-text').innerText = data.q;
+    
+    const optsArea = document.getElementById('quiz-options-area');
+    optsArea.innerHTML = '';
+    document.getElementById('quiz-next-btn').style.display = 'none';
+
+    data.opts.forEach((opt, idx) => {
+      const btn = document.createElement('button');
+      btn.className = 'quiz-opt-btn';
+      btn.innerText = opt;
+      btn.onclick = () => selectOption(btn, idx);
+      optsArea.appendChild(btn);
+    });
+  }
+
+  function selectOption(clickedBtn, selectedIdx) {
+    // Hilangkan seleksi sebelumnya
+    const allBtns = document.querySelectorAll('.quiz-opt-btn');
+    allBtns.forEach(b => b.classList.remove('selected'));
+    
+    // Tambahkan seleksi
+    clickedBtn.classList.add('selected');
+
+    // Simpan jawaban sementara di element tombol Next (pakai atribut)
+    const nextBtn = document.getElementById('quiz-next-btn');
+    nextBtn.dataset.answer = selectedIdx;
+    nextBtn.style.display = 'block';
+  }
+
+  function loadNextQuestion() {
+  const nextBtn = document.getElementById('quiz-next-btn');
+
+  const userAns = parseInt(nextBtn.dataset.answer);
+  const currentQuestion = quizDB[currentTopic][qIndex];
+  const correctAns = currentQuestion.ans;
+
+  // simpan jawaban user
+  userAnswers.push({
+    question: currentQuestion.q,
+    userAnswer: currentQuestion.opts[userAns],
+    correctAnswer: currentQuestion.opts[correctAns],
+    isCorrect: userAns === correctAns
+  });
+
+  if (userAns === correctAns) {
+    scoreCorrect++;
+  }
+
+  qIndex++;
+
+  if (qIndex < 5) {
+    renderQuestion();
+  } else {
+    showFinalResult();
+  }
+  }
+
+  function showFinalResult() {
+  hideAllQuizStates();
+  stateResult.style.display = 'block';
+
+  const finalScore = (scoreCorrect / 5) * 100;
+
+  document.getElementById('quiz-final-score').innerText = finalScore;
+  document.getElementById('quiz-correct-count').innerText = scoreCorrect;
+  document.getElementById('quiz-wrong-count').innerText = 5 - scoreCorrect;
+
+  // area review
+  const reviewArea = document.getElementById('quiz-review-area');
+  reviewArea.innerHTML = '';
+
+  userAnswers.forEach((item, index) => {
+
+    const div = document.createElement('div');
+
+    div.className = item.isCorrect
+      ? 'quiz-review-item correct'
+      : 'quiz-review-item wrong';
+
+    div.innerHTML = `
+      <div class="quiz-review-question">
+        ${index + 1}. ${item.question}
+      </div>
+
+      <div class="quiz-review-answer">
+        Jawaban Kamu:
+        <strong>${item.userAnswer}</strong>
+      </div>
+
+      <div class="quiz-review-answer">
+        Jawaban Benar:
+        <strong>${item.correctAnswer}</strong>
+      </div>
+
+      <div class="${
+        item.isCorrect
+          ? 'review-correct-text'
+          : 'review-wrong-text'
+      }">
+        ${item.isCorrect ? '✔ Correct' : '✖ Wrong'}
+      </div>
+    `;
+
+    reviewArea.appendChild(div);
+  });
+  }
+</script>
+
+<script>
+function resetQuizEngine() {
+
+  // reset data quiz
+  currentTopic = '';
+  qIndex = 0;
+  scoreCorrect = 0;
+  userAnswers = [];
+
+  // hapus jawaban sebelumnya
+  const reviewArea = document.getElementById('quiz-review-area');
+  reviewArea.innerHTML = '';
+
+  // reset tombol next
+  const nextBtn = document.getElementById('quiz-next-btn');
+  nextBtn.style.display = 'none';
+  delete nextBtn.dataset.answer;
+
+  // kembali ke menu kategori
+  hideAllQuizStates();
+  // kembali ke tampilan awal
+  hideAllQuizStates();
+  stateStart.style.display = 'block';
+  }
+</script>
+
+</body>
+</html>
