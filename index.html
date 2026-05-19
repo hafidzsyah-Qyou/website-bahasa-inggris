@@ -493,222 +493,27 @@ window.addEventListener('DOMContentLoaded', () => {
 <script>
 const hero = document.querySelector('.hero');
 
-window.addEventListener('scroll', function () {
-  const scrollY = window.scrollY;
+if(hero){
+  window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY;
 
-  hero.style.backgroundPosition =
-    `center ${scrollY * 0.5}px`;
-});
-</script>
-<script>
-  // --- QUIZ LOGIC ---
-  const quizDB = {
-    narrative: [
-      { q: "What is the main purpose of Narrative Text?", opts: ["To report an event", "To entertain the readers", "To explain a process", "To describe a person"], ans: 1 },
-      { q: "Which part introduces the characters and setting?", opts: ["Orientation", "Resolution", "Complication", "Events"], ans: 0 },
-      { q: "The problem or conflict in the story is called...", opts: ["Re-orientation", "Resolution", "Complication", "Orientation"], ans: 2 },
-      { q: "Which of the following is an example of Narrative Text?", opts: ["Biography of B.J. Habibie", "How to make a cake", "My Holiday to the Beach", "The Lion and The Mouse"], ans: 3 },
-      { q: "What is the function of the Resolution?", opts: ["To create a new problem", "To explain how the problem is solved", "To give a moral value", "To describe the characters"], ans: 1 }
-    ],
-    biography: [
-      { q: "Biography Text is written based on...", opts: ["Imagination", "Fairy tales", "Factual information", "Legends"], ans: 2 },
-      { q: "What is usually found in the 'Orientation' of a Biography?", opts: ["Name, birthplace, and background", "A chronological list of events", "A moral lesson", "The conclusion of their life"], ans: 0 },
-      { q: "Where did B.J. Habibie study engineering?", opts: ["Indonesia", "Germany", "United States", "Japan"], ans: 1 },
-      { q: "The generic structure of Biography text is...", opts: ["Orientation - Events - Re-orientation", "Orientation - Complication - Resolution", "Goal - Materials - Steps", "Identification - Description"], ans: 0 },
-      { q: "In what year did B.J. Habibie become the President of Indonesia?", opts: ["1936", "1955", "1998", "1999"], ans: 2 }
-    ],
-    recount: [
-      { q: "Recount Text retells past events in...", opts: ["Alphabetical order", "Random order", "Chronological order", "Reverse order"], ans: 2 },
-      { q: "What is the purpose of Recount Text?", opts: ["To amuse with magic", "To inform or entertain about past experiences", "To argue a point", "To describe an object"], ans: 1 },
-      { q: "In the example 'My Holiday to the Beach', what time did they arrive?", opts: ["7 a.m.", "8 a.m.", "9 a.m.", "10 a.m."], ans: 2 },
-      { q: "Which part of Recount Text provides personal impression?", opts: ["Orientation", "Events", "Re-orientation", "Complication"], ans: 2 },
-      { q: "Which language feature is primarily used in Recount Text?", opts: ["Simple Present Tense", "Simple Future Tense", "Simple Past Tense", "Present Continuous Tense"], ans: 2 }
-    ]
-  };
-
-  let currentTopic = '';
-  let qIndex = 0;
-  let scoreCorrect = 0;
-  let userAnswers = [];
-
-  const stateStart = document.getElementById('quiz-start-state');
-  const stateCat = document.getElementById('quiz-category-state');
-  const stateQ = document.getElementById('quiz-question-state');
-  const stateResult = document.getElementById('quiz-result-state');
-
-  function hideAllQuizStates() {
-    stateStart.style.display = 'none';
-    stateCat.style.display = 'none';
-    stateQ.style.display = 'none';
-    stateResult.style.display = 'none';
-  }
-
-  function showQuizCategories() {
-    hideAllQuizStates();
-    stateCat.style.display = 'block';
-  }
-
-  function startQuizEngine(topic) {
-    currentTopic = topic;
-    qIndex = 0;
-    scoreCorrect = 0;
-    userAnswers = [];
-    document.getElementById('quiz-topic-badge').innerText = topic.toUpperCase();
-    hideAllQuizStates();
-    stateQ.style.display = 'block';
-    renderQuestion();
-  }
-
-  function renderQuestion() {
-    const data = quizDB[currentTopic][qIndex];
-    document.getElementById('quiz-progress').innerText = `${qIndex + 1} / 5`;
-    document.getElementById('quiz-question-text').innerText = data.q;
-    
-    const optsArea = document.getElementById('quiz-options-area');
-    optsArea.innerHTML = '';
-    document.getElementById('quiz-next-btn').style.display = 'none';
-
-    data.opts.forEach((opt, idx) => {
-      const btn = document.createElement('button');
-      btn.className = 'quiz-opt-btn';
-      btn.innerText = opt;
-      btn.onclick = () => selectOption(btn, idx);
-      optsArea.appendChild(btn);
-    });
-  }
-
-  function selectOption(clickedBtn, selectedIdx) {
-    // Hilangkan seleksi sebelumnya
-    const allBtns = document.querySelectorAll('.quiz-opt-btn');
-    allBtns.forEach(b => b.classList.remove('selected'));
-    
-    // Tambahkan seleksi
-    clickedBtn.classList.add('selected');
-
-    // Simpan jawaban sementara di element tombol Next (pakai atribut)
-    const nextBtn = document.getElementById('quiz-next-btn');
-    nextBtn.dataset.answer = selectedIdx;
-    nextBtn.style.display = 'block';
-  }
-
-  function loadNextQuestion() {
-  const nextBtn = document.getElementById('quiz-next-btn');
-
-  const userAns = parseInt(nextBtn.dataset.answer);
-  const currentQuestion = quizDB[currentTopic][qIndex];
-  const correctAns = currentQuestion.ans;
-
-  // simpan jawaban user
-  userAnswers.push({
-    question: currentQuestion.q,
-    userAnswer: currentQuestion.opts[userAns],
-    correctAnswer: currentQuestion.opts[correctAns],
-    isCorrect: userAns === correctAns
+    hero.style.backgroundPosition =
+      `center ${scrollY * 0.5}px`;
   });
-
-  if (userAns === correctAns) {
-    scoreCorrect++;
-  }
-
-  qIndex++;
-
-  if (qIndex < 5) {
-    renderQuestion();
-  } else {
-    showFinalResult();
-  }
-  }
-
-  function showFinalResult() {
-  hideAllQuizStates();
-  stateResult.style.display = 'block';
-
-  const finalScore = (scoreCorrect / 5) * 100;
-
-  document.getElementById('quiz-final-score').innerText = finalScore;
-  document.getElementById('quiz-correct-count').innerText = scoreCorrect;
-  document.getElementById('quiz-wrong-count').innerText = 5 - scoreCorrect;
-
-  // area review
-  const reviewArea = document.getElementById('quiz-review-area');
-  reviewArea.innerHTML = '';
-
-  userAnswers.forEach((item, index) => {
-
-    const div = document.createElement('div');
-
-    div.className = item.isCorrect
-      ? 'quiz-review-item correct'
-      : 'quiz-review-item wrong';
-
-    div.innerHTML = `
-      <div class="quiz-review-question">
-        ${index + 1}. ${item.question}
-      </div>
-
-      <div class="quiz-review-answer">
-        Jawaban Kamu:
-        <strong>${item.userAnswer}</strong>
-      </div>
-
-      <div class="quiz-review-answer">
-        Jawaban Benar:
-        <strong>${item.correctAnswer}</strong>
-      </div>
-
-      <div class="${
-        item.isCorrect
-          ? 'review-correct-text'
-          : 'review-wrong-text'
-      }">
-        ${item.isCorrect ? '✔ Correct' : '✖ Wrong'}
-      </div>
-    `;
-
-    reviewArea.appendChild(div);
-  });
-  }
-</script>
-
-<script>
-function resetQuizEngine() {
-
-  // reset data quiz
-  currentTopic = '';
-  qIndex = 0;
-  scoreCorrect = 0;
-  userAnswers = [];
-
-  // hapus jawaban sebelumnya
-  const reviewArea = document.getElementById('quiz-review-area');
-  reviewArea.innerHTML = '';
-
-  // reset tombol next
-  const nextBtn = document.getElementById('quiz-next-btn');
-  nextBtn.style.display = 'none';
-  delete nextBtn.dataset.answer;
-
-  // kembali ke menu kategori
-  hideAllQuizStates();
-  // kembali ke tampilan awal
-  hideAllQuizStates();
-  stateStart.style.display = 'block';
-  }
+}
 </script>
 
 <script>
 function openQuizPage(type){
 
-  if(type === 'narrative'){
-    window.location.href = 'narrative.html';
-  }
+  const pages = {
+    narrative: 'narrative.html',
+    biography: 'biography.html',
+    recount: 'recount.html'
+  };
 
-  else if(type === 'biography'){
-    window.location.href = 'biography.html';
-  }
-
-  else if(type === 'recount'){
-    window.location.href = 'recount.html';
+  if(pages[type]){
+    window.location.href = pages[type];
   }
 }
 </script>
