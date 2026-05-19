@@ -80,6 +80,43 @@ body{
   font-size:1.05rem;
 }
 
+/* TOP BAR */
+.top-bar{
+  width:92%;
+  max-width:1000px;
+  margin:30px auto 0;
+}
+
+.back-btn{
+  border:none;
+
+  background:rgba(255,255,255,.12);
+
+  color:white;
+
+  padding:12px 22px;
+
+  border-radius:14px;
+
+  font-size:15px;
+
+  font-weight:600;
+
+  cursor:pointer;
+
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,.15);
+
+  transition:.25s;
+}
+
+.back-btn:hover{
+  background:var(--accent);
+
+  transform:translateY(-2px);
+}
+
 /* STORY BOX */
 .story-box{
   background:rgba(255,255,255,.08);
@@ -257,6 +294,40 @@ body{
   border-color:rgba(239,68,68,.25);
 }
 
+.try-btn{
+  width:100%;
+
+  padding:16px;
+
+  border:none;
+
+  border-radius:18px;
+
+  margin-top:25px;
+
+  background:linear-gradient(
+    135deg,
+    var(--accent),
+    var(--accent-glow)
+  );
+
+  color:white;
+
+  font-size:16px;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.try-btn:hover{
+  transform:translateY(-2px);
+
+  box-shadow:0 10px 20px rgba(74,144,217,.35);
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
 
@@ -276,9 +347,16 @@ body{
   }
 }
 
+
 </style>
 </head>
 <body>
+
+<div class="top-bar">
+  <button class="back-btn" onclick="goBack()">
+    ← Back
+  </button>
+</div>
 
 <div class="quiz-page">
 
@@ -359,7 +437,9 @@ Submit Answers
 
 <div id="reviewArea"></div>
 
-</div>
+<button class="try-btn" onclick="retryQuiz()">
+  Try Again
+</button>
 
 </div>
 
@@ -449,6 +529,21 @@ window.addEventListener('DOMContentLoaded',()=>{
   }
 
 });
+
+</script>
+
+<script>
+
+function goBack(){
+  window.location.href = 'index.html';
+}
+
+</script>
+<script>
+
+function retryQuiz(){
+  location.reload();
+}
 
 </script>
 </body>
