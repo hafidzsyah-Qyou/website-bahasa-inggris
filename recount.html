@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recount Quiz</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+  margin:0;
+  background:#07111f;
+  color:white;
+  font-family:'DM Sans',sans-serif;
+}
+
+.quiz-page{
+  width:90%;
+  max-width:1000px;
+  margin:auto;
+  padding:60px 0;
+}
+
+.quiz-header{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.quiz-header h1{
+  font-size:60px;
+  font-family:'DM Serif Display',serif;
+}
+
+.story-box{
+  background:rgba(255,255,255,.05);
+  border-radius:25px;
+  padding:35px;
+  line-height:1.8;
+  margin-bottom:40px;
+}
+
+.question-card{
+  background:rgba(255,255,255,.05);
+  border-radius:25px;
+  padding:30px;
+  margin-bottom:25px;
+}
+
+.option-btn{
+  width:100%;
+  padding:15px;
+  border:none;
+  border-radius:15px;
+  margin-bottom:12px;
+  background:#132238;
+  color:white;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.option-btn:hover{
+  background:#1d3557;
+}
+
+.option-btn.selected{
+  background:#2563eb;
+}
+
+.submit-btn{
+  width:100%;
+  padding:18px;
+  border:none;
+  border-radius:18px;
+  background:#2563eb;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+}
+
+.result-box{
+  margin-top:40px;
+  background:rgba(255,255,255,.05);
+  border-radius:25px;
+  padding:30px;
+  display:none;
+}
+
+.review-item{
+  margin-top:20px;
+  padding:20px;
+  border-radius:18px;
+}
+
+.correct{
+  background:rgba(34,197,94,.15);
+}
+
+.wrong{
+  background:rgba(239,68,68,.15);
+}
+
+</style>
+</head>
+<body>
+
+<div class="quiz-page">
+
+<div class="quiz-header">
+<h1>First Day at School</h1>
+<p>Recount Text Quiz</p>
+</div>
+
+<div class="story-box">
+
+<p>
+Last Monday was my first day at school.
+I woke up very early and prepared my school uniform.
+I felt nervous because I would meet many new friends and teachers.
+When I arrived at school, the students and teachers welcomed me warmly.
+We introduced ourselves in class and learned about school rules.
+At the end of the day, I felt happy and excited to return to school again.
+</p>
+
+</div>
+
+<div id="quiz-area">
+
+<div class="question-card">
+<h3>1. When was the first day at school?</h3>
+
+<button class="option-btn" onclick="selectAnswer(0,this,true)">Last Monday</button>
+<button class="option-btn" onclick="selectAnswer(0,this,false)">Last Friday</button>
+<button class="option-btn" onclick="selectAnswer(0,this,false)">Yesterday</button>
+</div>
+
+<div class="question-card">
+<h3>2. How did the writer feel?</h3>
+
+<button class="option-btn" onclick="selectAnswer(1,this,false)">Angry</button>
+<button class="option-btn" onclick="selectAnswer(1,this,true)">Nervous</button>
+<button class="option-btn" onclick="selectAnswer(1,this,false)">Bored</button>
+</div>
+
+<div class="question-card">
+<h3>3. Who welcomed the writer?</h3>
+
+<button class="option-btn" onclick="selectAnswer(2,this,true)">Students and teachers</button>
+<button class="option-btn" onclick="selectAnswer(2,this,false)">Parents</button>
+<button class="option-btn" onclick="selectAnswer(2,this,false)">Neighbors</button>
+</div>
+
+<div class="question-card">
+<h3>4. What did they learn in class?</h3>
+
+<button class="option-btn" onclick="selectAnswer(3,this,false)">Mathematics</button>
+<button class="option-btn" onclick="selectAnswer(3,this,true)">School rules</button>
+<button class="option-btn" onclick="selectAnswer(3,this,false)">History</button>
+</div>
+
+<div class="question-card">
+<h3>5. How did the writer feel at the end?</h3>
+
+<button class="option-btn" onclick="selectAnswer(4,this,false)">Sad</button>
+<button class="option-btn" onclick="selectAnswer(4,this,true)">Happy and excited</button>
+<button class="option-btn" onclick="selectAnswer(4,this,false)">Sleepy</button>
+</div>
+
+<button class="submit-btn" onclick="finishQuiz()">
+Submit Answers
+</button>
+
+</div>
+
+<div class="result-box" id="resultBox">
+
+<h2>Your Result</h2>
+
+<p id="scoreText"></p>
+<p id="correctText"></p>
+<p id="wrongText"></p>
+
+<div id="reviewArea"></div>
+
+</div>
+
+</div>
+
+<script>
+
+const answers = [];
+const review = [];
+
+function selectAnswer(q,btn,isCorrect){
+
+  document.querySelectorAll('.question-card')[q]
+  .querySelectorAll('.option-btn')
+  .forEach(b=>b.classList.remove('selected'));
+
+  btn.classList.add('selected');
+
+  answers[q]=isCorrect;
+
+  review[q]={
+    question:q+1,
+    answer:btn.innerText,
+    correct:isCorrect
+  };
+}
+
+function finishQuiz(){
+
+  let correct=0;
+
+  answers.forEach(a=>{
+    if(a) correct++;
+  });
+
+  const wrong=5-correct;
+  const score=correct*20;
+
+  document.getElementById('resultBox').style.display='block';
+
+  document.getElementById('scoreText').innerText=
+  "Score : "+score;
+
+  document.getElementById('correctText').innerText=
+  "Correct : "+correct;
+
+  document.getElementById('wrongText').innerText=
+  "Wrong : "+wrong;
+
+  let html='';
+
+  review.forEach(r=>{
+
+    html+=`
+    <div class="review-item ${r.correct ? 'correct':'wrong'}">
+
+    <h4>
+    Question ${r.question}
+    </h4>
+
+    <p>Your Answer : ${r.answer}</p>
+
+    <p>
+    ${r.correct ? '✔ Correct':'✖ Wrong'}
+    </p>
+
+    </div>
+    `;
+  });
+
+  document.getElementById('reviewArea').innerHTML=html;
+}
+
+</script>
+
+</body>
+</html>

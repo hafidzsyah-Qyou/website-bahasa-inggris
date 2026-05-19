@@ -371,9 +371,17 @@
         <div id="quiz-category-state" style="display: none;">
           <h3>Pilih Topik Soal:</h3>
           <div class="quiz-cat-buttons">
-            <button class="quiz-btn-outline" onclick="startQuizEngine('narrative')">Narrative Text</button>
-            <button class="quiz-btn-outline" onclick="startQuizEngine('biography')">Biography Text</button>
-            <button class="quiz-btn-outline" onclick="startQuizEngine('recount')">Recount Text</button>
+            <button class="quiz-btn-outline" onclick="openQuizPage('narrative')">
+              Narrative Text
+            </button>
+
+            <button class="quiz-btn-outline" onclick="openQuizPage('biography')">
+              Biography Text
+            </button>
+
+            <button class="quiz-btn-outline" onclick="openQuizPage('recount')">
+              Recount Text
+            </button>
           </div>
         </div>
 
@@ -686,6 +694,23 @@ function resetQuizEngine() {
   hideAllQuizStates();
   stateStart.style.display = 'block';
   }
+</script>
+
+<script>
+function openQuizPage(type){
+
+  if(type === 'narrative'){
+    window.location.href = 'narrative.html';
+  }
+
+  else if(type === 'biography'){
+    window.location.href = 'biography.html';
+  }
+
+  else if(type === 'recount'){
+    window.location.href = 'recount.html';
+  }
+}
 </script>
 
 </body>
