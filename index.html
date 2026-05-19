@@ -518,5 +518,29 @@ function openQuizPage(type){
 }
 </script>
 
+<script>
+  const stateStart = document.getElementById('quiz-start-state');
+  const stateCat = document.getElementById('quiz-category-state');
+  const stateQ = document.getElementById('quiz-question-state');
+  const stateResult = document.getElementById('quiz-result-state');
+
+  function hideAllQuizStates() {
+    stateStart.style.display = 'none';
+    stateCat.style.display = 'none';
+    stateQ.style.display = 'none';
+    stateResult.style.display = 'none';
+  }
+
+  function showQuizCategories() {
+    hideAllQuizStates();
+    stateCat.style.display = 'block';
+  }
+
+  function resetQuizEngine() {
+    hideAllQuizStates();
+    stateStart.style.display = 'block';
+  }
+</script>
+
 </body>
 </html>
